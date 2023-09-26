@@ -1,0 +1,6 @@
+driverName: postgres
+url: "postgres://test:password@localhost/event_adaptor?sslmode=disable"
+maxOpenConnections: 40
+maxIdleConnections: 20
+connectionMaxLifetimeInSeconds: 90
+connectionMaxIdleTimeInSeconds: 30

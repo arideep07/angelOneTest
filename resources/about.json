@@ -1,0 +1,18 @@
+{
+  "id": "go-example-project",
+  "summary": "Example Service",
+  "description": "A example service",
+  "maintainers": [
+    "Shubham Sinha  <shubham.sinha@angelbroking.com>",
+    "Nitesh Jain <nitesh.jain@angelbroking.com>"
+  ],
+  "projectRepo": "https://github.com/angel-one/go-example-project",
+  "projectHome": "https://github.com/angel-one/go-example-project",
+  "logsLinks": [
+    "https://internalstatus.angelbroking.com/graylog",
+    "https://internalstatus.angelbroking.com/graylog"
+  ],
+  "statsLinks": [
+    "https://internalstatus.angelbroking.com/grafana-prod/d/qthP5xoVz/order-state-transition-analytics?orgId=1"
+  ]
+}

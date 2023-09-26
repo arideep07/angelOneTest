@@ -1,0 +1,283 @@
+basePath: /
+definitions:
+  jobs.JobResult:
+    properties:
+      msg:
+        type: string
+      res: {}
+      success:
+        type: boolean
+    type: object
+  models.CounterResponse:
+    properties:
+      count:
+        type: integer
+      key:
+        type: string
+    type: object
+  models.ErrorResponse:
+    properties:
+      code:
+        type: string
+      description:
+        type: string
+    type: object
+  models.FullNameRequest:
+    properties:
+      firstName:
+        example: Nitesh
+        type: string
+      lastName:
+        example: Jain
+        type: string
+    type: object
+  models.FullNameResponse:
+    properties:
+      name:
+        example: Nitesh Jain
+        type: string
+    type: object
+  models.MathsJobResponse:
+    properties:
+      res:
+        type: string
+      success:
+        type: boolean
+    type: object
+  models.MathsRequest:
+    properties:
+      a:
+        type: integer
+      b:
+        type: integer
+      op:
+        type: string
+    type: object
+  models.MoxyResponse:
+    properties:
+      data:
+        type: string
+    type: object
+info:
+  contact:
+    email: Team DL or Slack Group Name
+    name: Add Team Name
+  description: '"Bearer" followed by a space and JWT token (Specify Trade vs Non Trade
+    JWt token).'
+  title: Go Example Project
+  version: "1.0"
+paths:
+  /counter/create:
+    post:
+      description: Creates a new counter
+      operationId: createCounter
+      parameters:
+      - description: counter key
+        in: query
+        name: key
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: ""
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Creates a new counter
+      tags:
+      - counter
+  /counter/current:
+    get:
+      description: Get the current value of counter
+      operationId: currentCount
+      parameters:
+      - description: counter key
+        in: query
+        name: key
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CounterResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Get the current value of counter
+      tags:
+      - counter
+  /counter/decrement:
+    put:
+      description: Decrement an existing counter
+      operationId: decrementCounter
+      parameters:
+      - description: counter key
+        in: query
+        name: key
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Decrement an existing counter
+      tags:
+      - counter
+  /counter/increment:
+    put:
+      description: Increment an existing counter
+      operationId: incrementCounter
+      parameters:
+      - description: counter key
+        in: query
+        name: key
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Increment an existing counter
+      tags:
+      - counter
+  /fullName:
+    post:
+      consumes:
+      - application/json
+      description: Gets the full name from the first name and last name
+      operationId: fullName
+      parameters:
+      - description: first name and last name
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.FullNameRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FullNameResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      security:
+      - Bearer: []
+      summary: Gets the full name from the first name and last name
+      tags:
+      - fullName
+  /maths:
+    post:
+      consumes:
+      - application/json
+      description: Returns a op b
+      operationId: asyncMaths
+      parameters:
+      - description: a op b
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.MathsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.MathsJobResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.MathsJobResponse'
+      summary: Does a maths op in a async way
+      tags:
+      - asyncMaths
+  /maths/{id}:
+    get:
+      description: GGet the status (and result if completed) of the job
+      operationId: getJobStatus
+      parameters:
+      - description: counter key
+        in: query
+        name: key
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/jobs.JobResult'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/jobs.JobResult'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/jobs.JobResult'
+      summary: Get the status (and result if completed) of the job
+      tags:
+      - asyncMaths
+  /moxy:
+    get:
+      description: Get the moxy response
+      operationId: moxy
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.MoxyResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Get the moxy response
+      tags:
+      - moxy
+securityDefinitions:
+  Bearer:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
