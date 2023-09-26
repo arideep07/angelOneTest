@@ -1,4 +1,4 @@
-module github.com/angel-one/go-example-project
+module github.com/arideep07/angelOneTest
 
 go 1.18
 

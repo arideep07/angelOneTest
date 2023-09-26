@@ -1,7 +1,7 @@
 package flags
 
 import (
-	"github.com/angel-one/go-example-project/constants"
+	"github.com/arideep07/angelOneTest/constants"
 	flag "github.com/spf13/pflag"
 )
 

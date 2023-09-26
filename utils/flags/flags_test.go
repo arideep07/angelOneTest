@@ -3,8 +3,8 @@ package flags_test
 import (
 	"testing"
 
-	"github.com/angel-one/go-example-project/constants"
-	"github.com/angel-one/go-example-project/utils/flags"
+	"github.com/arideep07/angelOneTest/constants"
+	"github.com/arideep07/angelOneTest/utils/flags"
 	"github.com/stretchr/testify/assert"
 )
 

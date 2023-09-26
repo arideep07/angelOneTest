@@ -2,13 +2,14 @@ package database
 
 import (
 	"database/sql"
-	"github.com/angel-one/go-example-project/constants"
-	"github.com/angel-one/go-utils/log"
 	"time"
+
+	"github.com/angel-one/go-utils/log"
+	"github.com/arideep07/angelOneTest/constants"
 )
 
 type Config struct {
-	Url                string        `json:"url"`
+	Url                   string        `json:"url"`
 	Name                  string        `json:"name"`
 	Username              string        `json:"-"`
 	Password              string        `json:"-"`
