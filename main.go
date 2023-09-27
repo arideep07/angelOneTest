@@ -15,7 +15,7 @@ func main() {
 	r := gin.Default()
 
 	// Call the SetupRoutes function from the api package to set up logger routes
-	api.SetupRoutes(r)
+	api.logger(r)
 
 	// Start the HTTP server and listen on port
 	startRouter()

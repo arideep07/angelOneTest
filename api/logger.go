@@ -15,7 +15,7 @@ type LogEntry struct {
 var logs []LogEntry
 
 // SetupRoutes initializes and sets up the routes for the logger API.
-func SetupRoutes(r *gin.Engine) {
+func logger(r *gin.Engine) {
 	// Define an HTTP endpoint to log messages (POST request)
 	r.POST("/log", func(c *gin.Context) {
 		var logEntry LogEntry
@@ -34,11 +34,5 @@ func SetupRoutes(r *gin.Engine) {
 
 		// Respond with the logged entry and a status code of 201 (Created)
 		c.JSON(http.StatusCreated, logEntry)
-	})
-
-	// Define an HTTP endpoint to retrieve all logs (GET request)
-	r.GET("/logs", func(c *gin.Context) {
-		// Respond with the in-memory log entries and a status code of 200 (OK)
-		c.JSON(http.StatusOK, logs)
 	})
 }
