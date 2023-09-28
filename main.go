@@ -14,8 +14,8 @@ func main() {
 	// Create a Gin router with default middleware
 	r := gin.Default()
 
-	// Call the SetupRoutes function from the api package to set up logger routes
-	api.logger(r)
+	// Configure Logger routes
+	api.SetupLoggerRoutes(r)
 
 	// Start the HTTP server and listen on port
 	startRouter()

@@ -16,7 +16,6 @@ func GetRouter(middlewares ...gin.HandlerFunc) *gin.Engine {
 	router := gin.New()
 	router.Use(middlewares...)
 	router.Use(gin.Recovery())
-	r := gin.Default()
 
 	// configure swagger
 	router.GET(constants.SwaggerRoute, ginSwagger.WrapHandler(swaggerFiles.Handler))
@@ -24,9 +23,8 @@ func GetRouter(middlewares ...gin.HandlerFunc) *gin.Engine {
 	// configure actuator
 	router.GET(constants.ActuatorRoute, actuator)
 
-	// adding api
-	// router.POST(constants.FullNameRoute, fullName)
-	router.POST(constants.LoggerRoute, logger)
+	// Configure Logger routes
+	SetupLoggerRoutes(router)
 
 	return router
 }
