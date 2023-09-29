@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/angel-one/go-utils/log"
-	"github.com/arideep07/angelOneTest/constants"
-	"github.com/arideep07/angelOneTest/models"
+	"github.com/angel-one/nbu-logger-service/constants"
+	"github.com/angel-one/nbu-logger-service/models"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,4 +1,4 @@
-module github.com/arideep07/angelOneTest
+module github.com/angel-one/nbu-logger-service
 
 go 1.18
 

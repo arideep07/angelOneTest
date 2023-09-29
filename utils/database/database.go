@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/angel-one/go-utils/log"
-	"github.com/arideep07/angelOneTest/constants"
+	"github.com/angel-one/nbu-logger-service/constants"
 )
 
 type Config struct {

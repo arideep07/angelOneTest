@@ -1,7 +1,7 @@
 package flags
 
 import (
-	"github.com/arideep07/angelOneTest/constants"
+	"github.com/angel-one/nbu-logger-service/constants"
 	flag "github.com/spf13/pflag"
 )
 

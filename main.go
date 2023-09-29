@@ -6,9 +6,9 @@ import (
 
 	"github.com/angel-one/go-utils/log"
 	"github.com/angel-one/go-utils/middlewares"
-	"github.com/arideep07/angelOneTest/api"
-	"github.com/arideep07/angelOneTest/constants"
-	"github.com/arideep07/angelOneTest/utils/flags"
+	"github.com/angel-one/nbu-logger-service/api"
+	"github.com/angel-one/nbu-logger-service/constants"
+	"github.com/angel-one/nbu-logger-service/utils/flags"
 )
 
 func main() {

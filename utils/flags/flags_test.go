@@ -3,8 +3,8 @@ package flags_test
 import (
 	"testing"
 
-	"github.com/arideep07/angelOneTest/constants"
-	"github.com/arideep07/angelOneTest/utils/flags"
+	"github.com/angel-one/nbu-logger-service/constants"
+	"github.com/angel-one/nbu-logger-service/utils/flags"
 	"github.com/stretchr/testify/assert"
 )
 

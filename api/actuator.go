@@ -1,8 +1,8 @@
 package api
 
 import (
-	"github.com/arideep07/angelOneTest/constants"
-	"github.com/arideep07/angelOneTest/utils/flags"
+	"github.com/angel-one/nbu-logger-service/constants"
+	"github.com/angel-one/nbu-logger-service/utils/flags"
 	"github.com/gin-gonic/gin"
 	goActuator "github.com/sinhashubham95/go-actuator"
 )

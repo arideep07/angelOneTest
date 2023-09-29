@@ -1,7 +1,7 @@
 package api
 
 import (
-	"github.com/arideep07/angelOneTest/constants"
+	"github.com/angel-one/nbu-logger-service/constants"
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
